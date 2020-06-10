@@ -6,9 +6,9 @@ cache:
   directories:
   - "$GOPATH/pkg/dep"
 env:
-  - GO111MODULE=on
   global:
      - COMMIT=${TRAVIS_COMMIT::8}
+  - GO111MODULE=on
 before_script:
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ] && [ -z "$TRAVIS_PULL_REQUEST_BRANCH" ]; then echo "latest"; elif [ "$TRAVIS_PULL_REQUEST_BRANCH" ]; then echo "$TRAVIS_PULL_REQUEST_BRANCH"; else echo "$TRAVIS_BRANCH"; fi`
 before_deploy:
