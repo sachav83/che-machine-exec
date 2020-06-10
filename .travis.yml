@@ -6,6 +6,7 @@ cache:
   directories:
   - "$GOPATH/pkg/dep"
 env:
+  - GO111MODULE=on
   global:
      - COMMIT=${TRAVIS_COMMIT::8}
 before_script:
